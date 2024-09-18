@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    //FUNCTION LOGIN
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
     public function index(){
         $books = Book::all();
         return view('index', compact('books'));

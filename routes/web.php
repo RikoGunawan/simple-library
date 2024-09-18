@@ -14,8 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [BookController::class, 'index'])->name('book');
+//FUNCTION LOGIN
+Route::group(['middleware' => 'auth'], function () {
+    // Masukkan route yang ingin diproteksi di sini
+    Route::get('/', [BookController::class, 'index'])->name('book');
 
-Route::get('form', [BookController::class, 'form'])->name('book.form');
+    Route::get('form', [BookController::class, 'form'])->name('book.form');
 
-Route::post('store', [BookController::class, 'store'])->name('book.store');
+    Route::post('store', [BookController::class, 'store'])->name('book.store');
+});
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

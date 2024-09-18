@@ -1,38 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/sass/app.scss'])
-    <title>Form</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;"">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">FORM BUKU</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('book.form') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="pointer-events: none;">Riko Gunawan - 2022130016</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    </nav>
-
+@section('content')
     <div class="container-fluid mt-3">
         @if ($errors->any())
             <div class="alert alert-danger mt-3">
@@ -92,9 +60,4 @@
             <button type="reset" class="btn btn-danger mt-4">Reset</button>
 
     </div>
-    </form>
-
-    @vite(['resources/js/app.js'])
-</body>
-
-</html>
+@endsection
